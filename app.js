@@ -11,7 +11,7 @@ const app = express(); // Crea la instancia principal de la aplicación Express.
 app.use(express.json()); // Middleware que permite leer `req.body` cuando el cliente envía JSON (Postman, fetch, etc.).
 
 
-app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors({origin: '*'}));
 app.use('/api/usuarios', require('./routes/usuario_routes'));
 app.use('/api/productos', require('./routes/producto_routes'));
 
