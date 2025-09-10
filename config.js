@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+require ('dotenv').config()
+
 const dbconnect = () => {
     mongoose.set('strictQuery', true)
-    mongoose.connect("mongodb://127.0.0.1:27017/login_user")
+    mongoose.connect(process.env.MONGODB_URL)
     .then((success) => console.log("Conexión exitosa"))
     .catch((err) => console.log(err.message));
 }
